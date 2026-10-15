@@ -1,8 +1,12 @@
 export const assetPaths = {
-  experiment4Docx: '/assets/experiments/exp4.docx',
-  experiment5Docx: '/assets/experiments/exp5.docx',
-  experiment4Html: '/assets/experiments/exp4.html',
-  experiment5Html: '/assets/experiments/exp5.html',
+  experiment1Docx: '/assets/experiments/exp1.docx',
+  experiment2Docx: '/assets/experiments/exp2.docx',
+  experiment6Docx: '/assets/experiments/exp6.docx',
+  experiment7Docx: '/assets/experiments/exp7.docx',
+  experiment1Html: '/assets/experiments/exp4.html',
+  experiment2Html: '/assets/experiments/exp5.html',
+  experiment6Html: '/assets/experiments/exp6.html',
+  experiment7Html: '/assets/experiments/exp7.html',
 };
 
 export const studentProfile = {
@@ -17,7 +21,7 @@ export const studentProfile = {
   githubUrl: 'https://github.com/thejacharan663-star',
   linkedinUrl: 'https://www.linkedin.com/in/charan-theja-8a220b37b/?isSelfProfile=true',
   shortBio:
-    "Hi! I'm G.Charan Theja, a Data Science undergraduate (Section DS-2) at Mohan Babu University, Tirupati. This portfolio presents my practical lab work in Data Wrangling and Data Visualization using Python, guided by Prof. Bosubabu Garu.",
+    "Hi! I'm G.Charan Theja, a Data Science undergraduate (Section DS-2) at Mohan Babu University, Tirupati. This portfolio presents my practical lab work in Data Wrangling, Data Visualization, Time Series Analysis, and Data Aggregation using Python, guided by Prof. Bosubabu Garu.",
 };
 
 export const studentDetails = [
@@ -93,7 +97,7 @@ export const modulesList = [
     number: '01',
     title: 'Data Wrangling',
     description:
-      'Work with hierarchical data, reshape tables, and combine DataFrames using the techniques in Experiment 4.',
+      'Work with hierarchical data, reshape tables, and combine DataFrames using the techniques in Experiment 1.',
     topics: [
       'Hierarchical indexing',
       'Partial indexing',
@@ -101,14 +105,14 @@ export const modulesList = [
       'Merge DataFrames by index',
       'combine_first',
     ],
-    experimentRoute: '/experiments/4',
+    experimentRoute: '/experiments/1',
     iconName: 'Database',
   },
   {
     number: '02',
     title: 'Data Visualization',
     description:
-      'Explore the Matplotlib and Seaborn plot types documented in Experiment 5.',
+      'Explore the Matplotlib and Seaborn plot types documented in Experiment 2.',
     topics: [
       'Matplotlib and Seaborn',
       'Line and bar plots',
@@ -116,33 +120,116 @@ export const modulesList = [
       'Histogram and density plot',
       'Scatter and box plots',
     ],
-    experimentRoute: '/experiments/5',
+    experimentRoute: '/experiments/2',
     iconName: 'BarChart3',
+  },
+  {
+    number: '03',
+    title: 'Time Series Analysis',
+    description:
+      'Datetime objects, date ranges, time zone conversion, period arithmetic, and resampling in Experiment 6.',
+    topics: [
+      'Timestamp indexing',
+      'date_range generation',
+      'Time zone localization & conversion',
+      'Period arithmetic',
+      'Resampling & upsampling',
+    ],
+    experimentRoute: '/experiments/6',
+    iconName: 'LineChart',
+  },
+  {
+    number: '04',
+    title: 'Data Aggregation',
+    description:
+      'Groupby operations with single and multiple keys, summary statistics, and EDA documented in Experiment 7.',
+    topics: [
+      'Single & multiple key groupby',
+      'Aggregate function (sum, mean, std)',
+      'Summary statistics',
+      'Exploratory data analysis',
+      'Iris dataset processing',
+    ],
+    experimentRoute: '/experiments/7',
+    iconName: 'Database',
   },
 ];
 
 export const experimentsList = [
   {
-    id: 4,
+    id: 1,
     title: 'Data Wrangling',
     description:
       'Hierarchical indexing, partial selection, stack and unstack, index-based merging, and combine_first.',
-    sourceFile: 'exp4.docx',
-    downloadUrl: assetPaths.experiment4Docx,
-    htmlSource: assetPaths.experiment4Html,
-    route: '/experiments/4',
+    sourceFile: 'exp1.docx',
+    downloadUrl: assetPaths.experiment1Docx,
+    htmlSource: assetPaths.experiment1Html,
+    route: '/experiments/1',
     iconName: 'TableProperties',
+    isEmpty: false,
   },
   {
-    id: 5,
+    id: 2,
     title: 'Data Visualization with Matplotlib and Seaborn',
     description:
       'Process an online Iris dataset and explore the plotting examples and topics from the lab document.',
-    sourceFile: 'exp5.docx',
-    downloadUrl: assetPaths.experiment5Docx,
-    htmlSource: assetPaths.experiment5Html,
-    route: '/experiments/5',
+    sourceFile: 'exp2.docx',
+    downloadUrl: assetPaths.experiment2Docx,
+    htmlSource: assetPaths.experiment2Html,
+    route: '/experiments/2',
     iconName: 'LineChart',
+    isEmpty: false,
+  },
+  {
+    id: 3,
+    title: 'Experiment 03',
+    description:
+      'Laboratory session slot 03. No documentation or programs uploaded yet.',
+    route: '/experiments/3',
+    iconName: 'FlaskConical',
+    isEmpty: true,
+  },
+  {
+    id: 4,
+    title: 'Experiment 04',
+    description:
+      'Laboratory session slot 04. No documentation or programs uploaded yet.',
+    route: '/experiments/4',
+    iconName: 'FlaskConical',
+    isEmpty: true,
+  },
+  {
+    id: 5,
+    title: 'Experiment 05',
+    description:
+      'Laboratory session slot 05. No documentation or programs uploaded yet.',
+    route: '/experiments/5',
+    iconName: 'FlaskConical',
+    isEmpty: true,
+  },
+  {
+    id: 6,
+    title: 'Time Series Analysis',
+    description:
+      'Create time series using datetime objects, date_range, time zone conversion, period arithmetic, frequency conversion, and resampling.',
+    sourceFile: 'exp6.docx',
+    downloadUrl: assetPaths.experiment6Docx,
+    htmlSource: assetPaths.experiment6Html,
+    route: '/experiments/6',
+    iconName: 'LineChart',
+    isEmpty: false,
+  },
+  {
+    id: 7,
+    title: 'Data Aggregation',
+    description:
+      'Group tabular data with groupby on single and multiple keys, compute summary statistics with aggregate, and perform EDA on Iris dataset.',
+    sourceFile: 'exp7.docx',
+    downloadUrl: assetPaths.experiment7Docx,
+    htmlSource: assetPaths.experiment7Html,
+    route: '/experiments/7',
+    iconName: 'Database',
+    isEmpty: false,
   },
 ];
 

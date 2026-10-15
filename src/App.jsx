@@ -29,14 +29,7 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/modules" element={<ModulesPage />} />
           <Route path="/experiments" element={<ExperimentsPage />} />
-          <Route
-            path="/experiments/4"
-            element={<ExperimentDetailPage experimentId={4} />}
-          />
-          <Route
-            path="/experiments/5"
-            element={<ExperimentDetailPage experimentId={5} />}
-          />
+          <Route path="/experiments/:id" element={<ExperimentDetailPage />} />
           <Route path="/tools" element={<ToolsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
