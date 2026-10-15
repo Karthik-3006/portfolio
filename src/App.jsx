@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ModulesPage from './pages/ModulesPage';
+import ModuleDetailPage from './pages/ModuleDetailPage';
 import ExperimentsPage from './pages/ExperimentsPage';
 import ExperimentDetailPage from './pages/ExperimentDetailPage';
 import ToolsPage from './pages/ToolsPage';
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/modules" element={<ModulesPage />} />
+          <Route path="/modules/:id" element={<ModuleDetailPage />} />
           <Route path="/experiments" element={<ExperimentsPage />} />
           <Route path="/experiments/:id" element={<ExperimentDetailPage />} />
           <Route path="/tools" element={<ToolsPage />} />

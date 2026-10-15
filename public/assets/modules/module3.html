@@ -1,0 +1,54 @@
+<h1>FEATURE SELECTION AND DECISION TREE FOUNDATIONS</h1>
+<p class="module-meta"><strong>Academic Module</strong> | Machine Learning | 30-Page Study Module</p>
+<p class="module-description">A comprehensive module covering feature types, feature selection methods, redundancy, feature engineering, leakage, validation, decision-tree structure, splitting criteria, classification and regression trees, pruning, complexity, interpretation, evaluation, and practical workflows.</p>
+
+<hr/>
+
+<h2>1. Introduction to Feature Selection and Decision Trees</h2>
+<p>Machine-learning models often receive many input variables, but more features do not automatically produce higher accuracy. Feature selection removes noisy, irrelevant, redundant, or costly predictors. Decision trees then offer a clear, transparent hierarchical structure for making data-driven decisions.</p>
+
+<h2>2. Major Feature Selection Approaches</h2>
+<table>
+  <thead>
+    <tr><th>Category</th><th>Mechanism</th><th>Key Strengths</th><th>Limitations</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Filter Methods</strong></td><td>Evaluates features independently of model (Correlation, Chi-Square, ANOVA, Mutual Information)</td><td>Fast, scalable, model-agnostic</td><td>Ignores feature interactions; may retain redundant features</td></tr>
+    <tr><td><strong>Wrapper Methods</strong></td><td>Evaluates feature subsets using model performance (Forward selection, Backward elimination, RFE)</td><td>Captures feature interactions</td><td>Computationally expensive; risk of overfitting without cross-validation</td></tr>
+    <tr><td><strong>Embedded Methods</strong></td><td>Performs selection internally during training (L1 Lasso, tree feature importance)</td><td>Balances accuracy and efficiency</td><td>Specific to the chosen learning algorithm</td></tr>
+  </tbody>
+</table>
+
+<h2>3. Correlation, Redundancy and Multicollinearity</h2>
+<p>Redundant features duplicate information already provided by other variables (e.g., height in cm vs meters). In linear and logistic models, multicollinearity inflates coefficient variance and complicates interpretability. Mutual information helps detect complex nonlinear dependencies that linear correlation misses.</p>
+
+<h2>4. Preventing Data Leakage</h2>
+<p><strong>Target Leakage:</strong> Including variables created or recorded after the outcome occurred.</p>
+<p><strong>Preprocessing Leakage:</strong> Performing scaling, encoding, or feature selection on the complete dataset prior to splitting into train/validation folds. Feature selection must always be fit exclusively on training data.</p>
+
+<h2>5. Decision Tree Structure & Splitting Logic</h2>
+<p>Decision trees recursively partition feature space into rectangular regions:</p>
+<ul>
+  <li><strong>Root Node:</strong> Topmost decision node representing the entire dataset.</li>
+  <li><strong>Internal Nodes:</strong> Tests applied to specific features (e.g., income &gt; 50,000).</li>
+  <li><strong>Branches:</strong> Outcomes of the split test.</li>
+  <li><strong>Leaf Nodes:</strong> Final terminal prediction (class label or numerical mean).</li>
+</ul>
+
+<h2>6. Splitting Criteria: Gini Impurity and Entropy</h2>
+<ul>
+  <li><strong>Gini Impurity:</strong> Measures class heterogeneity: <code>1 - &Sigma;(p_i&sup2;)</code>. A pure node has Gini = 0.</li>
+  <li><strong>Entropy:</strong> Measures information uncertainty: <code>-&Sigma; p_i log&sub2;(p_i)</code>.</li>
+  <li><strong>Information Gain:</strong> Reduction in entropy achieved by partitioning on a given feature split.</li>
+  <li><strong>Regression Trees:</strong> Minimize Mean Squared Error (MSE) or Mean Absolute Error (MAE) within child leaves.</li>
+</ul>
+
+<h2>7. Controlling Tree Complexity & Pruning</h2>
+<p>Unconstrained trees grow until every leaf is pure, memorizing training noise (overfitting). Complexity is regulated via:</p>
+<ul>
+  <li><strong>Pre-pruning hyperparameters:</strong> <code>max_depth</code>, <code>min_samples_split</code>, <code>min_samples_leaf</code>, <code>max_leaf_nodes</code>.</li>
+  <li><strong>Post-pruning:</strong> Cost-complexity pruning (minimal cost-complexity parameter &alpha;) removes branches providing insufficient validation gain.</li>
+</ul>
+
+<h2>8. Evaluation and Rule Interpretability</h2>
+<p>Classification trees are evaluated via Confusion Matrix, Precision, Recall, F1-Score, and ROC-AUC. Every path from root to leaf translates directly into human-readable <code>IF-THEN</code> decision rules.</p>

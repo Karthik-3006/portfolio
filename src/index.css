@@ -559,6 +559,13 @@ a:focus-visible {
   color: var(--slate-dark);
 }
 
+.clean-page-card__subtitle {
+  margin: -4px 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--decent-accent);
+}
+
 .clean-page-card > p {
   margin: 0 0 20px;
   font: 500 14.5px / 1.65 var(--font-sans);

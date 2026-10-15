@@ -1,0 +1,37 @@
+<h1>DIMENSIONALITY REDUCTION</h1>
+<p class="module-meta"><strong>Academic Module</strong> | Machine Learning | 30-Page Study Module</p>
+<p class="module-description">A detailed academic explanation of why high-dimensional data is difficult to analyze, how dimensionality reduction works, major linear and nonlinear methods, practical workflows, evaluation, and common mistakes.</p>
+
+<hr/>
+
+<h2>1. Introduction & The Curse of Dimensionality</h2>
+<p>Dimensionality reduction represents high-dimensional data using a smaller number of informative components while preserving essential structural information. As dimensions increase, data points become extremely sparse, distance metrics (e.g., Euclidean distance) concentrate and lose discriminative power, storage requirements soar, and models risk severe overfitting.</p>
+
+<h2>2. Preprocessing & Feature Scaling</h2>
+<p>Variance-based methods such as PCA are highly sensitive to variable scales. A feature measured in millions will dominate variance over a feature measured in units between 0 and 1. <strong>Standardization (Z-score scaling: mean 0, unit variance)</strong> is critical before computing principal components.</p>
+
+<h2>3. Principal Component Analysis (PCA)</h2>
+<p>PCA is an unsupervised linear technique that rotates coordinates to align with directions of maximum data variance:</p>
+<ul>
+  <li><strong>First Principal Component (PC1):</strong> Captures the largest direction of variance in the feature space.</li>
+  <li><strong>Second Principal Component (PC2):</strong> Orthogonal (uncorrelated) to PC1, capturing the maximum remaining variance.</li>
+  <li><strong>Mathematical Foundation:</strong> Computed via the eigendecomposition of the covariance matrix <code>&Sigma; = V &Lambda; V^T</code> or Singular Value Decomposition (SVD) of the centered data matrix <code>X = U &Sigma; V^T</code>.</li>
+</ul>
+
+<h2>4. Choosing Dimensionality: Scree Plots & Explained Variance</h2>
+<p>The <strong>explained variance ratio</strong> quantifies the proportion of dataset variance captured by each component. Selection strategies include cumulative variance thresholds (e.g., retaining components that explain 90% or 95% total variance) and identifying the elbow point on a scree plot.</p>
+
+<h2>5. Supervised vs Unsupervised: Linear Discriminant Analysis (LDA)</h2>
+<p>While PCA maximizes total variance without regard to class labels, <strong>LDA</strong> is a supervised technique that finds linear combinations maximizing between-class scatter relative to within-class scatter. For <em>C</em> classes, LDA yields at most <em>C - 1</em> discriminant dimensions.</p>
+
+<h2>6. Nonlinear Dimensionality Reduction & Manifold Learning</h2>
+<p>When data lies on curved, nonlinear manifolds, linear projections fail to preserve neighborhood topology:</p>
+<ul>
+  <li><strong>Kernel PCA:</strong> Uses kernel functions (RBF, polynomial) to compute PCA in an implicit high-dimensional Hilbert space.</li>
+  <li><strong>t-SNE (t-Distributed Stochastic Neighbor Embedding):</strong> Preserves local pairwise probabilities using a Student-t distribution in the low-dimensional embedding; premier tool for 2D/3D cluster visualization.</li>
+  <li><strong>UMAP (Uniform Manifold Approximation and Projection):</strong> Graph-theoretical manifold reduction preserving both local neighborhood structure and global continuum, often faster than t-SNE.</li>
+  <li><strong>Autoencoders:</strong> Neural network bottleneck architectures trained to reconstruct input data, learning flexible nonlinear latent representations.</li>
+</ul>
+
+<h2>7. Practical Machine Learning Workflow</h2>
+<p>In predictive pipelines, dimensionality reduction must be treated as a learned transformer fit strictly on training folds to prevent test set data leakage. Downstream model accuracy, reconstruction error, and computational latency determine final dimensionality choice.</p>
