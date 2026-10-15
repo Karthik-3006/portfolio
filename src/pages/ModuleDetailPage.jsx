@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, Download } from 'lucide-react';
 import DocumentViewer from '../components/DocumentViewer';
 import NotFoundPage from './NotFoundPage';
 import { modulesList } from '../data/portfolioData';
@@ -27,14 +27,15 @@ export default function ModuleDetailPage({ moduleId }) {
             {moduleItem.subtitle}
           </p>
         </div>
-        {moduleItem.experimentRoute && (
-          <Link
+        {moduleItem.pdfUrl && (
+          <a
             className="btn-clean btn-clean--primary"
-            to={moduleItem.experimentRoute}
+            href={moduleItem.pdfUrl}
+            download={moduleItem.pdfFileName}
           >
-            <span>Related Lab Experiment</span>
-            <ArrowUpRight size={15} />
-          </Link>
+            <Download size={16} />
+            <span>Download Module PDF</span>
+          </a>
         )}
       </header>
 

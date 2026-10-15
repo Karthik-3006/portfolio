@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, BookOpen } from 'lucide-react';
+import { ArrowRight, BookOpen, Download } from 'lucide-react';
 import DynamicIcon from '../components/DynamicIcon';
 import SectionHeading from '../components/SectionHeading';
 import { modulesList } from '../data/portfolioData';
@@ -36,14 +36,15 @@ export default function ModulesPage() {
                 <span>Read Module Guide</span>
                 <ArrowRight size={15} />
               </Link>
-              {mod.experimentRoute && (
-                <Link
+              {mod.pdfUrl && (
+                <a
                   className="btn-clean btn-clean--outline"
-                  to={mod.experimentRoute}
+                  href={mod.pdfUrl}
+                  download={mod.pdfFileName}
                 >
-                  <span>Related Lab Exp</span>
-                  <ArrowUpRight size={14} />
-                </Link>
+                  <Download size={15} />
+                  <span>Download Module PDF</span>
+                </a>
               )}
             </div>
           </article>
